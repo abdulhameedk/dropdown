@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="dropdown">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.5.x" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js" data-semver="1.5.11"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+   <div class="dropdown">
+     
+<button ng-click="myFunction()" class="dropbtn"><div ng-hide="aaa == true">Select</div>
+<div ng-repeat="a in label">{{a.name}}</div></button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" ng-model="searchText">
+    <div ng-repeat="friend in friends | filter:searchText">
+    <a href="#about" ><input type="checkbox"  ng-model="friend.isChecked" ng-click="setLabel()">{{friend.name}}</a>
+    </div>
+  </div>
+</div>
+  </body>
+
+</html>
